@@ -69,7 +69,13 @@ const checkWinner = ()=>{
         }
      }
     }
-}
+    if ([...boxes].every(box => box.innerText !== "")) {
+        msg.innerText = "It's a Draw!";
+        msgContainer.classList.remove("hide");
+        disableBoxes();
+    }
+};
+
 
 newGameBtn.addEventListener("click",resetGame);
 resetBtn.addEventListener("click",resetGame);
